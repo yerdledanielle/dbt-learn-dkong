@@ -4,4 +4,4 @@ select
     "paymentMethod" as payment_method,
     amount / 100 as amount, -- to convert from cents to dollars
     created
-from raw.stripe.payment
+from {{ source('stripe', 'payment') }}
