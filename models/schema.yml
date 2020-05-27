@@ -32,3 +32,15 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+  - name: orders
+    description: This model shows customer id and amount of orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+  - name: stg_payments
+    description: This model cleans up payments data
+    columns:
+      - name: id
+        tests:
+          - not_null
